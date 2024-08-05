@@ -31,7 +31,7 @@ console.log({ selectedCategory });
 
     <main className="m-auto flex flex-col md:w-[768px] lg:w-[1024px] web:w-[1920px] bg-white">
       
-      <Header />
+      <Header classname="px-[28.95%]"/>
       <Slider />
       <Trend />
       <p className="text-2xl font-semibold text-gray-900 p-8 h-">
@@ -40,7 +40,7 @@ console.log({ selectedCategory });
       <div className="flex text-black gap-4">
         
         {tags.map((tag) => (
-          <div key={tag.value} className={`cursor-pointer hover:text-[#d4a373] ${selectedCategory === tag.value ? "" : ""}`} onClick={() => setSelectedCategory(tag.value)}>
+          <div key={tag.value} className={`cursor-pointer font-bold hover:text-[#d4a373] ${selectedCategory === tag.value ? "" : ""}`} onClick={() => setSelectedCategory(tag.value)}>
             {tag.name}
           </div>
         ))}

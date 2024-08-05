@@ -27,7 +27,7 @@ export function Header() {
     setOpen(false);
   }
   return (
-    <div className="flex items-center p-5 web:py-8 web:gap-[118px] web:px-[350px] justify-between mx-auto">
+    <div className="flex items-center py-5 lg:gap-[118px] md:justify-between w-full max-w-screen px-[352px]">
       <div className="flex flex-wrap items-center">
         <Image src="blog-web-pics/Union.svg" width={36} height={36} />
         <p className="text-black text-base ">
@@ -107,5 +107,6 @@ export function Header() {
             </input> */}
       </div>
     </div>
+
   );
 }
