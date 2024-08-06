@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import React from 'react';
 import { useEffect, useState } from "react";
 import "@/components/dayjs-mn/";
 import dayjs from "dayjs";
@@ -89,3 +90,4 @@ export function Content() {
     </div>
   );
 }
+export default Content;

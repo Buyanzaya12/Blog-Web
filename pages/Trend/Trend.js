@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from 'react';
 export function Trend() {
   return (
     <div className="mx-auto md:m-0">
@@ -19,3 +20,4 @@ export function Trend() {
     </div>
   );
 }
+export default Trend;

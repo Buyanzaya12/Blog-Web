@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import React from 'react';
 import parse from "html-react-parser";
 import { useRouter } from "next/router";
 export default function Page() {

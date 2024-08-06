@@ -1,4 +1,5 @@
 import Image from "next/image";
+import React from 'react';
 export function Footer() {
   return (
     <div className="flex justify-between">
@@ -19,3 +20,4 @@ export function Footer() {
     </div>
   );
 }
+export default Footer;

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import React from 'react';
 
 const images = [
   { src: "/Blog-web-pics/slider.png", alt: "Slider Image" },
@@ -29,7 +30,7 @@ export function Slider() {
           height={600}
           layout="responsive"
           objectFit="cover"
-          className="w-[1216px] h-[600px]"
+          className="web:w-[1216px] web:h-[600px]"
         />
 
         <div className="absolute top-[55.83%] left-[1.06%] border border-[#e8e8ea] bg-white rounded-xl p-4 lg:p-8 w-[49.17%] h-[42%]">
@@ -56,3 +57,4 @@ export function Slider() {
     </div>
   );
 }
+export default Slider;
