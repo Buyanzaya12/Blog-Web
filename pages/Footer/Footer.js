@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <div className="flex justify-between">
       <div className="flex">
-        <Image src="blog-web-pics/Union.svg" width={48} height={48} />
+        <Image src="Blog-web-pics/Union.svg" width={48} height={48} />
         <div className=" text-black">
           <p className="text-xl">
             Meta<span className="font-extrabold">Blog</span>

@@ -30,7 +30,7 @@ export function Header() {
   return (
     <div className="flex items-center p-5 md:py-8 web:gap-x-[118px] justify-between w-full mx-auto">
       <div className="flex flex-wrap items-center md:flex-1">
-        <Image src="blog-web-pics/Union.svg" width={30} height={30} className="mobile:w-9 mobile:h-9" />
+        <Image src="Blog-web-pics/Union.svg" width={30} height={30} className="mobile:w-9 mobile:h-9" />
         <p className="text-black text-lg mobile1:text-xl  ">
           Meta<span class="font-bold">Blog</span>
         </p>
@@ -51,7 +51,7 @@ export function Header() {
         />
         <button className="absolute ml-[180px]">
           <Image
-            src="/blog-web-pics/search-outline.svg"
+            src="/Blog-web-pics/search-outline.svg"
             width={16}
             height={16}
           />
@@ -60,7 +60,7 @@ export function Header() {
 
       <button onClick={openMenu} className="md:invisible md:w-0 flex flex-1 justify-end">
         <Image
-          src="blog-web-pics/menu-outline.svg"
+          src="Blog-web-pics/menu-outline.svg"
           width={32}
           height={32}
           className="w-[32px] h-[32px]"
@@ -84,7 +84,7 @@ export function Header() {
               />
               <button className="absolute ml-[180px]">
                 <Image
-                  src="/blog-web-pics/search-outline.svg"
+                  src="/Blog-web-pics/search-outline.svg"
                   width={16}
                   height={16}
                 />
