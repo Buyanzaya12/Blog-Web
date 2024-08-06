@@ -17,13 +17,13 @@ export default function Page() {
   async function getArticle() {
     setLoading(true);
 
-   
-   const response = await fetch(`https://dev.to/api/articles/${author}/${slug}`);
-  const detail = await response.json();
-        setArticle(detail);
+    const response = await fetch(
+      `https://dev.to/api/articles/${author}/${slug}`
+    );
+    const detail = await response.json();
+    setArticle(detail);
 
-        setLoading(false);
-      
+    setLoading(false);
   }
   if (!article) return <div>Loading...</div>;
 

@@ -1,39 +1,38 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import "@/components/dayjs-mn/";
 import dayjs from "dayjs";
 import relativeTime from "dayjs/plugin/relativeTime";
 
 dayjs.extend(relativeTime);
-const pageSize = 6;
 
 export function Content() {
   const [articles, setArticles] = useState([]);
-  const [page, setPage] = useState(1);
-  const [ended, setEnded] = useState(false);
-  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    loadMore();
+    fetch("https://dev.to/api/articles?username=paul_freeman")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setArticles(data);
+      });
   }, []);
 
-  async function loadMore() {
-    setLoading(true);
-
-    const response = await fetch(
-      `https://dev.to/api/articles?username=paul_freeman&page=${page}&per_page=${pageSize}`
-    );
-    const newArticles = await response.json();
-    const updatedArticles = articles.concat(newArticles);
-    setArticles(updatedArticles);
-    setPage(page + 1);
-    if (newArticles.length < pageSize) {
-      setEnded(true);
-    }
-    setLoading(false);
+  function loadMore() {
+    fetch("https://dev.to/api/articles?username=paul_freeman&page=2")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const newArticles = articles.concat(data);
+        setArticles(newArticles);
+      });
   }
   return (
     <div className="container mx-auto">
+      <p className="text-2xl font-semibold text-gray-900 p-8 h-">
+        All blog posts
+      </p>
       <div className="grid web:grid-cols-3 md:grid-cols-2 gap-4">
         {articles.map((item) => (
           <div key={item.id} className="card shadow-lg">
@@ -42,7 +41,7 @@ export function Content() {
                 src={item.social_image}
                 width={325}
                 height={240}
-                className="rounded-t-xl aspect-video object-cover bg-slate-600"
+                className="rounded-t-xl"
               />
               <div className="p-6">
                 <div className="grid grid-rows-3">
@@ -50,7 +49,7 @@ export function Content() {
                     {item.tag_list[0]}
                   </div>
                   <Link
-                    href={item.path}
+                    href={item.url}
                     target="_blank"
                     className="text-black font-semibold"
                   >
@@ -66,7 +65,7 @@ export function Content() {
                     />
                     <div className="">{item.user.name}</div>
                     <div className="text-gray-300">
-                      {dayjs(item.published_at).locale("mn").fromNow()}
+                      {dayjs(item.published_at).fromNow()}
                     </div>
                   </div>
                 </div>
@@ -75,17 +74,11 @@ export function Content() {
           </div>
         ))}
       </div>
-      {!ended && (
-        <div className="text-center" onClick={loadMore}>
-          <button
-            disabled={loading}
-            className="btn bg-white border border-[#696a75] hover:bg-gray-200 hover:text-gray-600 text-base text-[696a75] font-medium"
-          >
-            {loading && <span className="loading loading-spinner"></span>}
-            Load more
-          </button>
-        </div>
-      )}
+      <div className="text-center" onClick={loadMore}>
+        <button className="btn bg-white border border-[#696a75] hover:bg-gray-200 hover:text-gray-600 text-base text-[696a75] font-medium">
+          Load more
+        </button>
+      </div>
     </div>
   );
 }

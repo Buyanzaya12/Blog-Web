@@ -27,10 +27,10 @@ export function Header() {
     setOpen(false);
   }
   return (
-    <div className="flex items-center py-5 web:py-8 web:gap-x-[118px] justify-between mx-auto">
+    <div className="p-5 justify-center md:justify-center md:gap-[40px] items-center flex justify-between">
       <div className="flex flex-wrap items-center">
         <Image src="blog-web-pics/Union.svg" width={36} height={36} />
-        <p className="text-black text-xl ">
+        <p className="text-black text-base ">
           Meta<span class="font-bold">Blog</span>
         </p>
       </div>
@@ -43,7 +43,7 @@ export function Header() {
         ))}
       </div>
 
-      <div className="relative flex items-center invisible md:visible">
+      <div className="relative flex items-center flex-end invisible md:visible">
         <input
           placeholder="Search"
           className="bg-gray-100 rounded-[5px] py-2 px-4"
@@ -57,7 +57,7 @@ export function Header() {
         </button>
       </div>
 
-      <button onClick={openMenu} className="md:invisible md:w-0">
+      <button onClick={openMenu} className="md:invisible">
         <Image
           src="blog-web-pics/menu-outline.svg"
           width={32}
