@@ -34,7 +34,7 @@ export function Content() {
   }
   return (
     <div className="container mx-auto">
-      <div className="grid web:grid-cols-3 md:grid-cols-2 gap-4">
+      <div className="grid web:grid-cols-3 md:grid-cols-2 gap-4 ">
         {articles.map((item) => (
           <div key={item.id} className="card shadow-lg">
             <div className="">
@@ -42,7 +42,7 @@ export function Content() {
                 src={item.social_image}
                 width={325}
                 height={240}
-                className="rounded-t-xl aspect-video object-cover bg-slate-600"
+                className="rounded-t-xl aspect-video object-cover bg-slate-600 mx-auto"
               />
               <div className="p-6">
                 <div className="grid grid-rows-3">

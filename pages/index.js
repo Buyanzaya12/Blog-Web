@@ -32,14 +32,16 @@ export default function Home() {
       <Header classname="px-[28.95%]" />
       <Slider />
       <Trend />
-      <p className="text-2xl font-semibold text-gray-900 p-8">All Blog Post</p>
-      <div className="flex text-black gap-4">
+      <div className="md:m-0">
+        <p className="text-2xl font-semibold text-gray-900 p-8 md:p-0 md:mt-5">All Blog Post</p>
+      </div>
+
+      <div className="text-black gap-4 hidden md:block md:flex">
         {tags.map((tag) => (
           <div
             key={tag.value}
-            className={`cursor-pointer font-bold hover:text-[#d4a373] ${
-              selectedCategory === tag.value ? "" : ""
-            }`}
+            className={`cursor-pointer font-bold hover:text-[#d4a373] ${selectedCategory === tag.value ? "" : ""
+              }`}
             onClick={() => setSelectedCategory(tag.value)}
           >
             {tag.name}

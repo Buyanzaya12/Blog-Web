@@ -1,8 +1,8 @@
 import Image from "next/image";
 export function Trend() {
   return (
-    <div className="mx-auto">
-      <p className="text-2xl font-semibold text-gray-900 p-8">Trending</p>
+    <div className="mx-auto md:m-0">
+      <p className="text-2xl font-semibold text-gray-900 p-8 md:p-0 md:mt-5">Trending</p>
       <Image
         src="/blog-web-pics/Pic-1.png"
         width={325}
