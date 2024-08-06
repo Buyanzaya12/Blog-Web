@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import React from 'react';
 import parse from "html-react-parser";
 import { useRouter } from "next/router";
-export default function Page() {
+export function Page() {
   const [article, setArticle] = useState();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -35,3 +35,5 @@ export default function Page() {
     </div>
   );
 }
+
+export default Page;
