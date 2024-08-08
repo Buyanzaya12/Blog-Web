@@ -19,7 +19,7 @@ const navigations = [
 
 export function Upperfooter() {
   return (
-    <div className="flex flex mx-auto mt-16">
+    <div className="flex flex mx-auto mt-16 mb-6">
       <div className="flex-1 flex flex-col gap-6">
         <p className="text-lg font-semibold text-black">About</p>
         <p className="text-base text-[#696a75]">
@@ -40,14 +40,14 @@ export function Upperfooter() {
           880 123 456 789
         </p>
       </div>
-      <div className="text-[#3b3c4a] flex-1 flex flex-col ml-32">
+      <div className="text-[#3b3c4a] flex-1 flex flex-col ml-36">
         {navigations.map((nav) => (
           <Link key={nav.link} href={nav.link}>
             {nav.name}
           </Link>
         ))}
       </div>
-      <div className="flex flex-1 gap-[27px]">
+      <div className="flex flex-1 gap-[27px] items-start">
         <Image
           src="/Blog-web-pics/fb.svg"
           className="w-[16px]"

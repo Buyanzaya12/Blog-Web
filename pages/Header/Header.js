@@ -28,7 +28,7 @@ export function Header() {
     setOpen(false);
   }
   return (
-    <div className="flex items-center p-5 md:py-8 web:gap-x-[118px] justify-between w-full mx-auto">
+    <div className="flex items-center p-5 md:py-8 web:gap-x-[100px] justify-between w-full mx-auto">
       <div className="flex flex-wrap items-center md:flex-1">
         <Image src="Blog-web-pics/Union.svg" width={30} height={30} className="mobile:w-9 mobile:h-9" />
         <p className="text-black text-lg mobile1:text-xl  ">
@@ -43,7 +43,10 @@ export function Header() {
           </Link>
         ))}
       </div>
-
+      <button>
+        <Image src="/blog-web-pics/dark-mode.svg" width={32} height={32} className="" />
+        {/* <Image src="/blog-web-pics/light-mode.svg" width={32} height={32} className="flex-1"/> */}
+      </button>
       <div className="relative flex items-center hidden md:flex-1 md:flex md:block">
         <input
           placeholder="Search"
@@ -69,7 +72,7 @@ export function Header() {
 
       <div>
         <div
-          className={`fixed top-0 bottom-0 transition-all w-[320px] text-black bg-white shadow-lg ${open ? "right-0" : "-right-full"
+          className={`fixed top-0 bottom-0 transition-all w-[320px] text-black bg-gradient-to-r from-[#ae8b9c] to-[#8baaaa] shadow-lg ${open ? "right-0" : "-right-full"
             }`}
         >
           <button onClick={closeMenu} className="">
@@ -90,6 +93,7 @@ export function Header() {
                 />
               </button>
             </div>
+
             {navigations.map((nav) => (
               <Link key={nav.link} href={nav.link}>
                 {nav.name}

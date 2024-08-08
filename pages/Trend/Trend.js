@@ -1,5 +1,9 @@
 import Image from "next/image";
 import React from 'react';
+import Link from "next/link";
+
+const trendSize = 4;
+
 export function Trend() {
   return (
     <div className="mx-auto md:m-0">
@@ -17,6 +21,9 @@ export function Trend() {
         height={320}
         className="rounded-xl mx-auto mt-8 md:invisible md:w-0"
       />
+      <div>
+        
+      </div>
     </div>
   );
 }

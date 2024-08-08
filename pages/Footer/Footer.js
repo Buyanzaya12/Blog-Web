@@ -3,7 +3,7 @@ import React from 'react';
 export function Footer() {
   return (
     <div className="flex justify-between border-t border-t-[#dcdddf]">
-      <div className="flex">
+      <div className="flex py-6">
         <Image src="Blog-web-pics/Union.svg" width={48} height={48} />
         <div className=" text-black">
           <p className="text-xl">

@@ -1,9 +1,6 @@
-import { Header } from "@/pages/Header/Header";
 import { Slider } from "@/pages/Slider/Slider";
 import { Trend } from "@/pages/Trend/Trend";
 import { Content } from "@/pages/Content/Content";
-import { Upperfooter } from "@/pages/Upperfooter/Upperfooter";
-import { Footer } from "@/pages/Footer/Footer";
 import "@/components/dayjs-mn/";
 import { Inter } from "next/font/google";
 import { useEffect, useState } from "react";
@@ -24,14 +21,14 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [loading, setLoading] = useState(false);
   const [articles, setArticles] = useState([]);
-  const [ended, setEnded] = useState(false);
-  const [page, setPage] = useState(0);
+  // const [ended] = useState(false);
+  // const [page, setPage] = useState(0);
 
   async function loadInitialArticles() {
     setLoading(true);
 
     const response = await fetch(
-      `https://dev.to/api/articles?username=paul_freeman&tag=${selectedCategory}&per_page=3`
+      `https://dev.to/api/articles?username=paul_freeman&tag=${selectedCategory}&per_page=6`
     );
     const tagArticles = await response.json();
     setArticles(tagArticles);
@@ -46,7 +43,7 @@ async function loadNextArticles() {
 
   const nextPage = page + 1;
   const response = await fetch(
-    `https://dev.to/api/articles?username=paul_freeman&tag=${selectedCategory}&per_page=3&page=${nextPage}`
+    `https://dev.to/api/articles?username=paul_freeman&tag=${selectedCategory}&per_page=1&page=${nextPage}`
   );
   const nextArticles = await response.json();
   setArticles([...articles, ...nextArticles]);
@@ -87,7 +84,7 @@ async function loadNextArticles() {
           <ArticleCard key={item.id} article={item}/>
         ))}
       </div>
-      {!ended && (
+      {/* {!ended && (
         <div className="text-center mt-5">
           <button
             disabled={loading}
@@ -98,7 +95,7 @@ async function loadNextArticles() {
             Load more
           </button>
         </div>
-      )}
+      )} */}
       <Content />
       
     </main>
